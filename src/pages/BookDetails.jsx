@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import {  saveReadBook, saveWishlistBook } from "../utilities/localStorage";
 
 function BookDetails() {
     const { id } = useParams();
@@ -16,14 +17,12 @@ function BookDetails() {
     const book = books.find((book) => book.id === Number(id));
 
 
-    function handleRead() {
-    console.log("Read button clicked");
-    console.log(book);
+function handleRead() {
+    saveReadBook(book.id);
 }
 
-    function handleWishlist() {
-    console.log("Wishlist button clicked");
-    console.log(book);
+function handleWishlist() {
+    saveWishlistBook(book.id);
 }
 
     if (!book) {
