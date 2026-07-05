@@ -1,6 +1,6 @@
 function Hero(){
     return (
-        <section className="bg-gray-200 rounded-3xl px-16 py-14 flex items-center justify-between mt-8">
+        <section className="bg-gray-200 rounded-3xl px-19 py-14 flex items-center justify-between mt-18">
             
         <div className="max-w-lg">
             <h1 className="font-serif text-6xl font-bold leading-tight">Books to freshen up <br />your bookshelf </h1>

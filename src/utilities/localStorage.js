@@ -8,13 +8,21 @@ function getStoredReadBooks() {
     return [];
 }
 function saveReadBook(id) {
-    const storedBooks =getStoredReadBooks();
+    const storedBooks = getStoredReadBooks();
+
+    if (storedBooks.includes(id)) {
+        alert("This book is already in the Read list.");
+        return;
+    }
 
     storedBooks.push(id);
- localStorage.setItem(
+
+    localStorage.setItem(
         "read-books",
         JSON.stringify(storedBooks)
     );
+
+    alert("Book added to Read list.");
 }
 
 
@@ -42,4 +50,21 @@ function saveWishlistBook(id) {
     alert("Book added to Wishlist.");
 }
 
-export { getStoredReadBooks, saveReadBook,saveWishlistBook};
+function getStoredWishlistBooks() {
+    const storedBooks = localStorage.getItem("wishlist-books");
+
+    if (storedBooks) {
+        return JSON.parse(storedBooks);
+    }
+
+    return [];
+}
+
+
+
+export {
+    getStoredReadBooks,
+    getStoredWishlistBooks,
+    saveReadBook,
+    saveWishlistBook
+};
