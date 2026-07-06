@@ -8,10 +8,10 @@ function BookCard({book}){
                 <img 
                   src={book.image}
                   alt={book.bookName}
-                  className="h-52"
+                  className="h-44 md:h-52 object-contain"
                   />
             </div>
-            <div className="flex gap-4 mt-5">
+            <div className="flex flex-wrap gap-3 mt-5">
                 <span className="bg-green-100 text-green-700 text-sm font-semibold px-4 py-2 rounded-full">
                     {book.tags[0]}
                 </span>
@@ -20,7 +20,7 @@ function BookCard({book}){
                 </span>
             </div>
 
-            <h3 className="text-2xl font-bold mt-4">{book.bookName}</h3>
+            <h3 className="text-xl md:text-2xl font-bold mt-4 min-h-[64px]">{book.bookName}</h3>
             <p className="text-gray-500 mt-2">By: {book.author}</p>
 
             <div className="flex justify-between items-center mt-6 pt-5 border-t border-dashed border-gray-300 text-gray-500">

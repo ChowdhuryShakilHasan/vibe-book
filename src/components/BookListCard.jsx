@@ -2,19 +2,19 @@ import { Link } from "react-router-dom";
 
 function BookListCard({ book }) {
     return (
-        <div className="border border-gray-300 rounded-2xl p-6 flex gap-8">
+       <div className="border border-gray-300 rounded-2xl p-5 md:p-6 flex flex-col lg:flex-row gap-8">
 
           
-            <div className="bg-gray-100 rounded-xl p-6 flex justify-center items-center">
+           <div className="bg-gray-100 rounded-xl p-6 flex justify-center items-center lg:w-72">
                 <img
                     src={book.image}
                     alt={book.bookName}
-                    className="h-56"
+                    className="h-44 md:h-56 object-contain"
                 />
             </div>
             <div className="flex-1">
 
-                <h2 className="text-3xl font-bold">
+                <h2 className="text-2xl md:text-3xl font-bold">
                     {book.bookName}
                 </h2>
 
@@ -67,7 +67,7 @@ function BookListCard({ book }) {
 
                     <Link
                         to={`/books/${book.id}`}
-                        className="bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition">
+                        className="bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition w-full sm:w-auto text-center">
                                      View Details
                     </Link>
 

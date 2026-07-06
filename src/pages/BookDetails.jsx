@@ -7,6 +7,7 @@ function BookDetails() {
     const { id } = useParams();
 
     const [books, setBooks] = useState([]);
+    
 
     useEffect(() => {
         fetch("/books.json")
@@ -36,7 +37,7 @@ function handleWishlist() {
     }
 
 return (
-    <div className="max-w-6xl mx-auto">
+    <div className="max-w-6xl mx-auto px-4 md:px-6">
         <Navbar />
 
         <section className="mt-12 flex flex-col lg:flex-row gap-12">   
@@ -44,12 +45,12 @@ return (
                 <img
                     src={book.image}
                     alt={book.bookName}
-                    className="h-96"
+                    className="h-64 md:h-96 object-contain"
                 />
             </div>
             <div className="lg:w-1/2">
 
-                <h1 className="text-4xl font-bold">
+                <h1 className="text-3xl md:text-4xl font-bold">
                     {book.bookName}
                 </h1>
 
@@ -72,7 +73,7 @@ return (
                     {book.review}
                 </p>
 
-                    <div className="flex items-center gap-4 mt-8">
+                    <div className="flex flex-wrap items-center gap-4 mt-8">
                          <p className="font-semibold">
                          Tag
                         </p>
@@ -91,8 +92,8 @@ return (
 
                         <div className="space-y-4">
 
-                             <div className="flex">
-                                 <p className="w-48 text-gray-500">
+                             <div className="flex flex-col sm:flex-row gap-1 sm:gap-0">
+                                 <p className="sm:w-48 text-gray-500">
                                      Number of Pages:
                                 </p>
 
@@ -101,8 +102,8 @@ return (
                                  </p>
                              </div>
 
-                            <div className="flex">
-                                <p className="w-48 text-gray-500">
+                            <div className="flex flex-col sm:flex-row gap-1 sm:gap-0">
+                                <p className="sm:w-48 text-gray-500">
                                       Publisher:
                                 </p>
 
@@ -111,8 +112,8 @@ return (
                                 </p>
                             </div>
 
-                            <div className="flex">
-                                 <p className="w-48 text-gray-500">
+                            <div className="flex flex-col sm:flex-row gap-1 sm:gap-0">
+                                 <p className="sm:w-48 text-gray-500">
                                      Year of Publishing:
                                 </p>
 
@@ -121,8 +122,8 @@ return (
                                 </p>
                             </div>
 
-                            <div className="flex">
-                                <p className="w-48 text-gray-500">
+                            <div className="flex flex-col sm:flex-row gap-1 sm:gap-0">
+                                <p className="sm:w-48 text-gray-500">
                                     Rating:
                                 </p>
 
@@ -138,15 +139,15 @@ return (
  
         </section>
 
-    <div className="flex gap-4 mt-10">
+    <div className="flex flex-col sm:flex-row gap-4 mt-10">
     <button
         onClick={handleRead}
-        className="px-7 py-3 border border-black rounded-lg font-semibold hover:bg-gray-100 transition">
+        className="w-full sm:w-auto px-7 py-3 border border-black rounded-lg font-semibold hover:bg-gray-100 transition">
                 Read
     </button>
     <button
         onClick={handleWishlist}
-        className="px-7 py-3 bg-cyan-500 text-white rounded-lg font-semibold hover:bg-cyan-600 transition">
+        className="w-full sm:w-auto px-7 py-3 bg-cyan-500 text-white rounded-lg font-semibold hover:bg-cyan-600 transition">
                  Wishlist
     </button>
 

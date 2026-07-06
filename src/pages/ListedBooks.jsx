@@ -64,11 +64,11 @@ function handleSort(type) {
 }
 
     return (
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto px-4 md:px-6">
             <Navbar />
 
             <div className="bg-gray-100 rounded-2xl py-8 mt-10">
-                <h1 className="text-4xl font-bold text-center">
+                <h1 className="text-3xl md:text-4xl font-bold text-center">
                     Listed Books
                 </h1>
             </div>
@@ -98,7 +98,7 @@ function handleSort(type) {
         </select>
             </div>
 
-            <div className="flex gap-6 mt-10 border-b">
+            <div className="flex flex-wrap gap-6 mt-10 border-b">
 
             <button
                  onClick={() => setActiveTab("read")}
@@ -111,7 +111,7 @@ function handleSort(type) {
             <button
                  onClick={() => setActiveTab("wishlist")}
                     className={`pb-3 ${
-                    activeTab === "wishlist"? "border-b-2 border-green-500 font-semibold": "text-gray-500"
+                    activeTab === "wishlist"? "border-b-2 border-green-500 font-semibold": "text-green-500"
                      }`}>
                          Wishlist Books
             </button>
